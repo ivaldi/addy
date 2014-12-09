@@ -8,7 +8,6 @@ Available attributes:
 	data-map *				Add this to the div which contains the map, this div should have a unique id
 	data-lat				Add latitude of known position
 	data-lng				Add longitude of known position
-	data-map-type			Set map Type ROADMAP | SATELLITE | HYBRID | TERRAIN
 	data-map-zoom			Set zoomlevel
 	data-stroke-color		Set color of route overlay
 	data-stroke-weight		Set weight of route overlay
@@ -27,7 +26,6 @@ var googleMapsRouteHelper = (function($){
 		dataInput = $('[data-input]');
 		dataLat = (dataMap.data('lat') == undefined) ? 52.379189 : dataMap.data('lat');
 		dataLng = (dataMap.data('lng') == undefined) ? 4.899431 : dataMap.data('lng');
-		datamapType = (dataMap.data('map-type') == undefined) ? 'TERRAIN' : dataMap.data('map-type');
 		datamapZoom = (dataMap.data('map-zoom') == undefined) ? 15 : dataMap.data('map-zoom');
 		datastrokeColor = (dataMap.data('stroke-color') == undefined) ? "#cccccc" : dataMap.data('stroke-color');
 		datastrokeWeight = (dataMap.data('stroke-weight') == undefined) ? 5 : dataMap.data('stroke-weight');
@@ -44,7 +42,7 @@ var googleMapsRouteHelper = (function($){
         var mapOptions = {
             center: new google.maps.LatLng(51.937511, dataLng),
 			zoom: datamapZoom,
-			mapTypeId: google.maps.MapTypeId.datamapType
+			mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
         map = new google.maps.Map(document.getElementById(dataMap.attr('id')), mapOptions);
