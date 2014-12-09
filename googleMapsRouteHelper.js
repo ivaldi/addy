@@ -40,7 +40,7 @@ var googleMapsRouteHelper = (function($){
         });
 
         var mapOptions = {
-            center: new google.maps.LatLng(51.937511, dataLng),
+            center: new google.maps.LatLng(dataLat, dataLng),
 			zoom: datamapZoom,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
         };
