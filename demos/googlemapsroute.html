@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/screen.css">
+    </head>
+    <body>
+        <ul>
+            <li><a href="slick.html">Slick</a></li>
+            <li><a href="postloader.html">Postloader</a></li>
+            <li><a href="googlemapsroute.html">Google Maps Route</a></li>
+        </ul>
+
+        <form action="#">
+            <input type="text" placeholder="Adres of Postcode" data-input/>
+            <input type="submit" value="submit" data-calc/>
+        </form>
+
+        <div id="address-canvas" style="width: 500px; height: 400px;" data-map data-lat="51.937511" data-lng="4.416482" data-map-zoom="12" data-stroke-color="#c233cf" data-stroke-weight="3"></div>
+      
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="../googleMapsRouteHelper.js"></script>
+    </body>
+</html>

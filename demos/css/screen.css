@@ -1,0 +1,24 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+[data-slick]{
+	margin-bottom: 0;
+}
+img{
+  max-width: 100%;
+}
+[data-map] img{
+	max-width: inherit;
+}
+[data-map-route] span{
+	display: block;
+}
+.slick-prev{
+	left: 0;
+}
+
+.slick-next{
+	right: 0;
+}
