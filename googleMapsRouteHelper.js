@@ -19,7 +19,7 @@ Available attributes:
 */
 
 var googleMapsRouteHelper = (function($){
-	var map, directionDisplay, directionsService, dataLat, dataLon;
+	var map, directionDisplay, directionsService, dataLat, dataLng;
 
 	function init(input) {
 		dataMap = $('[data-map]');
@@ -78,7 +78,7 @@ var googleMapsRouteHelper = (function($){
 
     function setMarker(map){
 
-	    var myLatLng = new google.maps.LatLng(dataLat, dataLon);
+	    var myLatLng = new google.maps.LatLng(dataLat, dataLng);
 	    var marker = new google.maps.Marker({
 	      position: myLatLng,
 	      map: map
@@ -86,8 +86,8 @@ var googleMapsRouteHelper = (function($){
         return true;
     }
 
-	function calcRoute(lat, lon) {
-		var start = lat + "," + lon;
+	function calcRoute(lat, lng) {
+		var start = lat + "," + lng;
 		var end = dataLat +","+ dataLng;
 		var request = {
 		    origin:start,
