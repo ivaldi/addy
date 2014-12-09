@@ -69,7 +69,6 @@ var googleMapsRouteHelper = (function($){
 			if (status == google.maps.GeocoderStatus.OK) {
 				res = results[0].geometry.location;
 			}
-			console.log(res);
 			if(res != undefined){
 				calcRoute(res.k, res.B);
 			}else{
