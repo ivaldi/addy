@@ -65,9 +65,11 @@ var googleMapsRouteHelper = (function($){
 		var geo = new google.maps.Geocoder;
 
 		geo.geocode({'address':address},function(results, status){
+			var res;
 			if (status == google.maps.GeocoderStatus.OK) {
 				res = results[0].geometry.location;
 			}
+			console.log(res);
 			if(res != undefined){
 				calcRoute(res.k, res.B);
 			}else{
