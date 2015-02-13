@@ -8,13 +8,11 @@ Available attributes:
   data-in-content           false
   data-sticky-container
 
-
   * = required
 */
 
 var stickyNav = (function($){
-  var nav, navoffset, navHeight, inContent, stickyContainer, stickyContainerLeft, stickyContainerRight,
-  save;
+  var nav, navoffset, navHeight, inContent, stickyContainer, stickyContainerLeft, stickyContainerRight;
 
   function init(){
     nav = $('[data-sticky-nav]'),
