@@ -22,40 +22,46 @@ var stickyNav = (function($){
     stickyContainerRight = $(window).width() - stickyContainerLeft - stickyContainer.outerWidth();
 
     if(nav.length > 0){
-      navoffset = nav.offset().top,
-      navHeight = nav.outerHeight();
+      navoffset = [];
+      navHeight = [];
+      nav.each(function(){
+        navoffset.push($(this).offset().top),
+        navHeight.push($(this).outerHeight());
+      });
     }
   }
 
   function scroller(){
     if(nav.length > 0 && nav != undefined){
-      if($(window).scrollTop() > navoffset){
-        if(!nav.hasClass('sticky')){
-          nav.before('<div data-sticky-clone style="height:'+navHeight+'px"></div>');
-          nav.addClass('sticky');
+      nav.each(function(index){
+        if($(window).scrollTop() > navoffset[index]){
+          if(!$(this).hasClass('sticky')){
+            $(this).before('<div data-sticky-clone="'+index+'" style="height:'+navHeight[index]+'px"></div>');
+            $(this).addClass('sticky');
+            if(inContent){
+              $(this).css({
+                'left' : stickyContainerLeft,
+                'right' : stickyContainerRight,
+                'position' : 'fixed',
+                'top' : 0
+              });
+            }else{
+              $(this).css({
+                'left' : 0,
+                'right' : 0,
+                'position' : 'fixed',
+                'top' : 0
+              });
+            }
+          }
+        }else{
+          $(this).removeClass('sticky');
+          $('[data-sticky-clone="'+index+'"]').remove();
           if(inContent){
-            nav.css({
-              'left' : stickyContainerLeft,
-              'right' : stickyContainerRight,
-              'position' : 'fixed',
-              'top' : 0
-            });
-          }else{
-            nav.css({
-              'left' : 0,
-              'right' : 0,
-              'position' : 'fixed',
-              'top' : 0
-            });
+            $(this).removeAttr('style');
           }
         }
-      }else{
-        nav.removeClass('sticky');
-        $('[data-sticky-clone]').remove();
-        if(inContent){
-          nav.removeAttr('style');
-        }
-      }
+      });
     }
   }
 

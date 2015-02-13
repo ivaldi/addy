@@ -35,7 +35,9 @@ ul.nav{
 	background: #fff;
 	text-align: center;
 }
-
+[data-sticky-nav="2"]{
+	background-color: red;
+}
 [data-sticky-nav] h2{
 	margin: 0;
 	padding: 20px 0;
