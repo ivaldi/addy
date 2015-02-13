@@ -3,6 +3,9 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+body{
+	margin: 0;
+}
 [data-slick]{
 	margin-bottom: 0;
 }
@@ -21,4 +24,37 @@ img{
 
 .slick-next{
 	right: 0;
+}
+
+ul.nav{
+	position: absolute;
+}
+
+[data-sticky-nav]{
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+	text-align: center;
+}
+
+[data-sticky-nav] h2{
+	margin: 0;
+	padding: 20px 0;
+}
+
+.scroller{
+	max-width: 600px;
+	margin: 0 auto;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 0 20px;
+}
+
+.scroller img{
+	margin: 0 -21px;
+	max-width: 120%;
+}
+
+[data-sticky-nav].sticky{
+    position: fixed;
+    top: 0;
 }
