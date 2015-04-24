@@ -8,7 +8,7 @@ Available attributes:
 	data-autoplay				false
 	data-autoplayspeed			3000
 	data-dots					false
-	data-draggable				true			
+	data-draggable				true
 	data-arrows					true
 	data-infinite				true
 	data-slide 					div
@@ -22,8 +22,8 @@ Available attributes:
 
 var slickHelper = (function($){
 	function slickInit(){
-		$('[data-slick]').each(function(){
-		
+		$('[data-iv-slick]').each(function(){
+
 			var slickSlider = $(this),
 				slick_autoplay = (slickSlider.attr('data-autoplay') == '') ? false : slickSlider.data('autoplay'),
 				slick_autoplaySpeed = (slickSlider.attr('data-autoplayspeed') == '') ? 3000 : slickSlider.data('autoplayspeed'),
@@ -36,6 +36,8 @@ var slickHelper = (function($){
 				slick_slidesToScroll = (slickSlider.attr('data-slidestoscroll') == '') ? 1 : slickSlider.data('slidestoscroll'),
 				slick_speed = (slickSlider.attr('data-speed') == '') ? 300 : slickSlider.data('speed'),
 				slick_vertical = (slickSlider.attr('data-vertical') == '') ? false : slickSlider.data('vertical');
+				slick_centerMode = (slickSlider.attr('data-centermode') == undefined) ? false : slickSlider.data('centermode');
+				slick_centerPadding = (slickSlider.attr('data-centerpadding') == undefined) ? '' : slickSlider.data('centerpadding');
 
 			slickSlider.slick({
 				autoplay: slick_autoplay,
@@ -47,6 +49,8 @@ var slickHelper = (function($){
 				slide: slick_slide,
 				slidesToShow: slick_slidesToShow,
 				slidesToScroll: slick_slidesToScroll,
+				centerMode: slick_centerMode,
+				centerPadding: slick_centerPadding,
 				speed: slick_speed,
 				vertical: slick_vertical
 			});
